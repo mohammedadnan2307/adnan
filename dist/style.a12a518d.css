@@ -1,0 +1,150 @@
+nav {
+    padding: 2% 0 1.5%;
+    text-align: center;
+    background-color: #fefaf6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#navbar-left {
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+}
+
+    #navbar-left a {
+        padding: 0 2rem;
+        color: black;
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+
+        #navbar-left a:hover {
+            color: grey;
+        }
+
+.logo {
+    width: 2rem;
+}
+
+#navbar-right {
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+}
+
+    #navbar-right a {
+        padding: 0 1.5em;
+        color: black;
+        font-size: 1.5rem;
+    }
+
+body {
+    background-color: #fefaf6;
+}
+
+/* CSS for Curtain Menu */
+.menu-toggler {
+    display: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250, 1);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.overlay-content {
+    position: relative;
+    top: 5%;
+    left: 3%;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: black;
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: .24em;
+    line-height: 2.4em;
+    text-transform: uppercase;
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+    .overlay a:hover, .overlay a:focus {
+        color: #e6e6e6;
+    }
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    margin-top: -25px;
+    top: 0.5px;
+    right: 2px;
+    font-size: 60px;
+    color: grey;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggler {
+        font-size: 1.5rem;
+        display: inline-block;
+        position: absolute;
+        left: 5%;
+    }
+
+    #navbar-right a {
+        padding: 0 0.6rem;
+    }
+
+    #navbar-left {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    #navbar-left {
+        left: 2%;
+    }
+
+        #navbar-left a {
+            padding: 0 0.75rem;
+            color: black;
+            font-size: 1.25rem;
+        }
+
+    #navbar-right {
+        right: 2%;
+    }
+}
+
+
+/*# sourceMappingURL=/style.a12a518d.css.map */

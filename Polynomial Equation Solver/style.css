@@ -1,0 +1,310 @@
+body {
+    background-color: #fefaf6;
+    text-align: center;
+    justify-content: center;
+    margin: 0 0 5rem;
+}
+
+/* NAVBAR & RELATED */
+
+nav {
+  padding: 2% 0 1.5%;
+  text-align: center;
+  background-color: #fefaf6;
+  font-family: "Montserrat", sans-serif;
+}
+
+#navbar-left {
+  display: inline-block;
+  position: absolute;
+  left: 5%;
+}
+
+#navbar-left a {
+  padding: 0 2rem;
+  color: black;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropbtn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dropdown-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 1.5rem 2rem 2rem;
+  background: #232320;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 6%), 0 19px 20px rgb(0 0 0 / 15%);
+  border-radius: 20px;
+  min-width: 18rem;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+#navbar-left .dropdown-content a {
+  font-size: 1.125rem;
+  padding: 0.75rem 1rem;
+  display: block;
+  text-align: left;
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#navbar-left a:hover {
+  color: #cdcdcd;
+}
+
+.logo {
+  width: 2rem;
+}
+
+#navbar-right {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+}
+
+#navbar-right a {
+  padding: 0 1.5em;
+  color: black;
+  font-size: 1.5rem;
+}
+
+/* CSS for Curtain Menu */
+
+.menu-toggler {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(250, 250, 250);
+  overflow-x: hidden; 
+  transition: 0.3s;
+  transition-delay: 0.1s;
+  display: inline-block;
+}
+
+.overlay-content {
+  position: relative;
+  top: 5%;
+  left: 3%;
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2.25rem;
+  color: black;
+  display: block;
+  font-family: "EB Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 0.24em;
+  line-height: 2.4em;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #e6e6e6;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  margin-top: -25px;
+  top: 0.5px;
+  right: 2px;
+  font-size: 60px;
+  color: grey;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* For Mobiles */
+
+@media (max-width: 767px) {
+
+    .menu-toggler {
+        font-size: 1.5rem;
+        display: inline-block;
+        position: absolute;
+        left: 5%;
+    }
+
+    #navbar-right a {
+        padding: 0 0.6rem;
+    }
+
+    #navbar-left {
+        display: none;
+    }
+
+    h1 {
+        line-height: 1.2;
+    }
+
+    :-webkit-any(article, aside, nav, section) h1 {
+        font-size: 2.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin: -3rem auto 0;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 1rem;
+    }
+
+    .form input {
+        width: 100%;
+        height: 2rem;
+    }
+
+    .form button.go {
+        width: 18%;
+        height: 2.5rem;
+        display: block;
+        margin: 3% auto 0;
+        position: relative;
+        left: 30%;
+    }
+
+    .top-section {
+        position: relative;
+    }
+
+    .input-dropdown {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 7%;
+    }
+
+}
+
+/* Between Tablet and Laptop */
+
+@media (min-width: 768px) and (max-width: 1300px) {
+
+    #navbar-left {
+        left: 2%;
+    }
+
+    #navbar-left a {
+        padding: 0 0.75rem;
+        color: black;
+        font-size: 1.25rem;
+    }
+
+    #navbar-right {
+        right: 2%;
+    }
+
+    .form input {
+        width: 70%;
+    }
+
+    .form button.go {
+        width: 7%;
+        margin: 0 2%;
+        height: 3rem;
+    }
+
+}
+
+.top-section {
+  margin: 10rem 3rem 3rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.375rem;
+  font-family: "Cinzel", serif;
+  color: #232320;
+  width: 80%;
+  margin: 0 auto 4%;
+}
+
+.form {
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+input {
+  width: 50%;
+  height: 3rem;
+  border: 1px solid #9d9d9d;
+  background-color: #fff;
+  border-radius: 4px;
+  -o-box-shadow: 0 0 0 3px #9d9d9d;
+  box-shadow: 0 0 0 3px #9d9d9d;
+  position: relative;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+button.go {
+  margin: auto 0.7%;
+  width: 4%;
+  height: 3.25rem;
+}
+
+::-webkit-input-placeholder {
+  color: grey;
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+}
+
+.input-error {
+  display: block;
+  width: 50%;
+  position: absolute;
+  left: 2%;
+  color: #d93025;
+}
+
+#result {
+    text-align: center;
+}
+
+#result h2 {
+    font-size: 2rem;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#result p {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+}

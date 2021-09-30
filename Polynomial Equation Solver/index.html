@@ -88,19 +88,16 @@
 
         </div>
         <div class="form">
-    
-            <input type="text" placeholder="Enter values" id="coefInput" list="examples"/>
-            <datalist id="examples">
-                <option>1,-5,6</option>
-                <option>1,,-5.2</option>
-            </datalist>
+
+            <input type="text" placeholder="Enter values" id="coefInput" />
             <button class="go btn btn-dark">Go</button>
-           
+
         </div>
 
     </section>
 
     <div id="result"></div>
+    <div id="graph"></div>
 
     <!-- Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -110,6 +107,9 @@
     <!-- React Scripts -->
     <script crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin="anonymous" src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Function Plot -->
+    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
 
     <!-- My Scripts -->
     <script src="solver.js" charset="utf-8" type="text/javascript"></script>

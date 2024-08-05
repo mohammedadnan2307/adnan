@@ -129,10 +129,9 @@ nav {
     color: #e6e6e6;
 }
 
+/* Position the close button (top right corner) */
+
 .overlay .closebtn {
-
-    /* Position the close button (top right corner) */
-
     position: absolute;
     margin-top: -25px;
     top: 0.5px;
@@ -236,11 +235,7 @@ h2 {
     background: linear-gradient( 6.03deg,#dacdff .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
 }
 
-.magic-tile {
-    background: linear-gradient( 39.4deg,#b6a0ea -2.55%,rgba(182,160,234,0) 45.21%),#f1ebff;
-}
-
-.polynomial-tile:hover, .encrypt-tile:hover, .magic-tile:hover {
+.polynomial-tile:hover, .encrypt-tile:hover {
     background: linear-gradient( 223.65deg,rgba(10,207,131,0) 60.59%,rgba(10,207,131,.62) 113.24%),#191919;
 }
 

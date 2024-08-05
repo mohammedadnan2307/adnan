@@ -1,18 +1,18 @@
 /* WIP */
 
 .wip {
-    text-align: center;
+  text-align: center;
 }
 
 .wip h1 {
-    font-size: 5rem;
-    font-family: 'Share Tech Mono', monospace;
-    margin: 0 auto;
+  font-size: 5rem;
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0 auto;
 }
 
 .fa-tools {
-    margin-top: 2rem;
-    font-size: 5rem;
+  margin-top: 2rem;
+  font-size: 5rem;
 }
 
 nav {
@@ -110,7 +110,8 @@ body {
   left: 0;
   top: 0;
   background-color: rgb(250, 250, 250);
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
   transition: 0.3s;
   transition-delay: 0.1s;
   display: inline-block;
@@ -122,7 +123,8 @@ body {
   left: 3%;
   width: 100%;
   text-align: left;
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 .overlay a {
@@ -138,10 +140,12 @@ body {
   letter-spacing: 0.24em;
   line-height: 2.4em;
   text-transform: uppercase;
-  transition: 0.3s; /* Transition effects on hover (color) */
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
 }
 
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover,
+.overlay a:focus {
   color: #e6e6e6;
 }
 
@@ -199,153 +203,153 @@ button.go {
 }
 
 #result {
-    text-align: center;
+  text-align: center;
 }
 
 #result h2 {
-    font-size: 2rem;
-    font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-family: 'Libre Baskerville', serif;
 }
 
 #result p {
-    font-family: 'Lora', serif;
-    font-size: 2rem;
+  font-family: 'Lora', serif;
+  font-size: 2rem;
 }
 
 .options .btn {
-    margin: 0 2rem 2rem;
+  margin: 0 2rem 2rem;
 }
 
 @media screen and (max-height: 450px) {
-    .overlay a {
-        font-size: 20px;
-    }
+  .overlay a {
+    font-size: 20px;
+  }
 
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }
 
 @media (max-width: 768px) {
 
-    .menu-toggler {
-        font-size: 1.5rem;
-        display: inline-block;
-        position: absolute;
-        left: 5%;
-    }
+  .menu-toggler {
+    font-size: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+  }
 
-    #navbar-left {
-        display: none;
-    }
+  #navbar-left {
+    display: none;
+  }
 }
 
 /* Mobiles */
 
 @media (max-width: 767px) {
 
-    /* WIP */
+  /* WIP */
 
-    .wip h1 {
-        font-size: 3rem;
-        font-family: 'Share Tech Mono', monospace;
-        margin: 0 auto;
-    }
+  .wip h1 {
+    font-size: 3rem;
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0 auto;
+  }
 
-    .fa-tools {
-        margin-top: 2rem;
-        font-size: 5rem;
-    }
+  .fa-tools {
+    margin-top: 2rem;
+    font-size: 5rem;
+  }
 
-    /* WIP */
-    
-    .menu-toggler {
-        font-size: 1.5rem;
-        display: inline-block;
-        position: absolute;
-        left: 5%;
-    }
+  /* WIP */
 
-    #navbar-right a {
-        padding: 0 0.6rem;
-    }
+  .menu-toggler {
+    font-size: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+  }
 
-    #navbar-left {
-        display: none;
-    }
+  #navbar-right a {
+    padding: 0 0.6rem;
+  }
 
-    h1 {
-        line-height: 1.2;
-    }
+  #navbar-left {
+    display: none;
+  }
 
-    :-webkit-any(article, aside, nav, section) h1 {
-        font-size: 2.5em;
-        margin-block-start: 0.83em;
-        margin-block-end: 0.83em;
-        margin: -3rem auto 0;
-    }
+  h1 {
+    line-height: 1.2;
+  }
 
-    ::-webkit-input-placeholder {
-        font-size: 1rem;
-    }
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 2.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin: -3rem auto 0;
+  }
 
-    .form input {
-        width: 100%;
-        height: 2rem;
-    }
+  ::-webkit-input-placeholder {
+    font-size: 1rem;
+  }
 
-    .form button.go {
-        width: 18%;
-        height: 2.5rem;
-        display: block;
-        margin: 3% auto 0;
-        position: relative;
-        left: 30%;
-    }
+  .form input {
+    width: 100%;
+    height: 2rem;
+  }
 
-    .top-section {
-        position: relative;
-    }
+  .form button.go {
+    width: 18%;
+    height: 2.5rem;
+    display: block;
+    margin: 3% auto 0;
+    position: relative;
+    left: 30%;
+  }
 
-    .options {
-        display: inline-block;
-        position: absolute;
-        bottom: 0;
-        left: 7%;
-    }
+  .top-section {
+    position: relative;
+  }
 
-    .options .btn {
-        margin: 0 1rem 0 0;
-    }
+  .options {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+  }
+
+  .options .btn {
+    margin: 0 1rem 0 0;
+  }
 }
 
 /* Between Tab and Laptop */
 
 @media (min-width: 768px) and (max-width: 1300px) {
-    
-    #navbar-left {
-        left: 2%;
-    }
 
-    #navbar-left a {
-        padding: 0 0.75rem;
-        color: black;
-        font-size: 1.25rem;
-    }
+  #navbar-left {
+    left: 2%;
+  }
 
-    #navbar-right {
-        right: 2%;
-    }
+  #navbar-left a {
+    padding: 0 0.75rem;
+    color: black;
+    font-size: 1.25rem;
+  }
 
-    .form input {
-        width: 70%;
-    }
+  #navbar-right {
+    right: 2%;
+  }
 
-    .form button.go {
-        width: 7%;
-        margin: 0 2%;
-        height: 3rem;
-    }
+  .form input {
+    width: 70%;
+  }
+
+  .form button.go {
+    width: 7%;
+    margin: 0 2%;
+    height: 3rem;
+  }
 }

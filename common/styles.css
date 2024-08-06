@@ -186,6 +186,15 @@ nav {
         display: none;
     }
 
+    .tile-holder img {
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 52px 74px rgba(0,21,64,.138559);
+        margin: 4rem auto 4em;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {

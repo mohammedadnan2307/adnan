@@ -152,6 +152,9 @@ h1.sub-titles {
     .skill-tiles {
         gap: 2em;
         margin: 120px auto 0;
+    }
+
+    .tile-title {
         font-size: 45px;
         text-align: right;
     }

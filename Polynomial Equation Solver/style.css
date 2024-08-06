@@ -1,144 +1,6 @@
 body {
-  background-color: #fefaf6;
   text-align: center;
   justify-content: center;
-  margin: 0 0 5rem;
-}
-
-/* NAVBAR & RELATED */
-
-nav {
-  padding: 2% 0 1.5%;
-  text-align: center;
-  background-color: #fefaf6;
-  font-family: "Montserrat", sans-serif;
-}
-
-#navbar-left {
-  display: inline-block;
-  position: absolute;
-  left: 5%;
-}
-
-#navbar-left a {
-  padding: 0 2rem;
-  color: black;
-  font-size: 1.25rem;
-  text-decoration: none;
-}
-
-.dropdown {
-  display: inline-block;
-}
-
-.dropbtn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.dropdown-content {
-  list-style-type: none;
-  margin: 0;
-  padding: 1.5rem 2rem 2rem;
-  background: #232320;
-  box-shadow: 0 4px 4px rgb(0 0 0 / 6%), 0 19px 20px rgb(0 0 0 / 15%);
-  border-radius: 20px;
-  min-width: 18rem;
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-
-#navbar-left .dropdown-content a {
-  font-size: 1.125rem;
-  padding: 0.75rem 1rem;
-  display: block;
-  text-align: left;
-  color: #fff;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-#navbar-left a:hover {
-  color: #cdcdcd;
-}
-
-.logo {
-  width: 2rem;
-}
-
-#navbar-right {
-  display: inline-block;
-  position: absolute;
-  right: 5%;
-}
-
-#navbar-right a {
-  padding: 0 1.5em;
-  color: black;
-  font-size: 1.5rem;
-}
-
-/* CSS for Curtain Menu */
-
-.menu-toggler {
-  display: none;
-}
-
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-color: rgb(250, 250, 250);
-  overflow-x: hidden;
-  transition: 0.3s;
-  transition-delay: 0.1s;
-  display: inline-block;
-}
-
-.overlay-content {
-  position: relative;
-  top: 5%;
-  left: 3%;
-  width: 100%;
-  text-align: left;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 0.5rem;
-  text-decoration: none;
-  font-size: 2.25rem;
-  color: black;
-  display: block;
-  font-family: "EB Garamond", serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1rem;
-  letter-spacing: 0.24em;
-  line-height: 2.4em;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-  color: #e6e6e6;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  margin-top: -25px;
-  top: 0.5px;
-  right: 2px;
-  font-size: 60px;
-  color: grey;
 }
 
 /* Content Section */
@@ -177,8 +39,7 @@ h1 {
   appearance: auto;
 }
 
-.mq-math-mode .mq-root-block,
-.mq-root-block {
+.mq-math-mode .mq-root-block, .mq-root-block {
   vertical-align: text-top;
 }
 
@@ -222,52 +83,11 @@ button.go {
   margin: 2rem auto 0;
 }
 
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
+/* Media Queries */
 
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-/* Curtain Menu for Mobiles */
-
-@media (max-width: 768px) {
-
-  .menu-toggler {
-    font-size: 1.5rem;
-    display: inline-block;
-    position: absolute;
-    left: 5%;
-  }
-
-  #navbar-left {
-    display: none;
-  }
-}
-
-/* For Mobiles */
+/* Mobile */
 
 @media (max-width: 767px) {
-
-  .menu-toggler {
-    font-size: 1.5rem;
-    display: inline-block;
-    position: absolute;
-    left: 5%;
-  }
-
-  #navbar-right a {
-    padding: 0 0.6rem;
-  }
-
-  #navbar-left {
-    display: none;
-  }
 
   h1 {
     line-height: 1.2;
@@ -323,23 +143,9 @@ button.go {
   }
 }
 
-/* Between Tablet and Laptop */
+/* Tablet and Laptop */
 
 @media (min-width: 768px) and (max-width: 1300px) {
-
-  #navbar-left {
-    left: 2%;
-  }
-
-  #navbar-left a {
-    padding: 0 0.75rem;
-    color: black;
-    font-size: 1.25rem;
-  }
-
-  #navbar-right {
-    right: 2%;
-  }
 
   .form #coefInput {
     width: 70%;

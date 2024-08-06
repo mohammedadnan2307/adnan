@@ -12,7 +12,14 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = ['Sandalee', 'Ennadi Maayavi', 'Iragai Poley', "L'Italiano", 'Munbe Vaa', 'Walk Unafraid', 'Lolita'];
+const songs = ['Dancing Barefoot', 'Libera Me', 'Oru Naalaikkul', 'Naan'];
+
+const songDirectory = {
+	"Naan": "naan",
+	"Dancing Barefoot": "dancing_barefoot",
+	"Libera Me": "libera_me",
+	"Oru Naalaikkul": "oru_naalaikkul",
+};
 
 // Keep track of song
 let songIndex = 2;
@@ -23,8 +30,9 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  var fileName = songDirectory[song]
+  audio.src = `https://d26icxokvtdw5w.cloudfront.net/audio/${fileName}.mp3`;
+  cover.src = `https://d26icxokvtdw5w.cloudfront.net/images/${fileName}.jpg`;
 }
 
 // Play song

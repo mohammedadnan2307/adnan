@@ -187,6 +187,10 @@ h1.sub-titles {
         margin-top: 0;
     }
 
+    .skill-tiles .tile-title {
+        text-align: center;
+    }
+
 }
 
 /* Tablet and Laptop */

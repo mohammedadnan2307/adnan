@@ -51,7 +51,7 @@ function renderCarouselItems() {
         return React.createElement("div", { className: "carousel-item", key: movie.id },
             React.createElement("a", { href: movie.movieLink },
                 React.createElement("img", {
-                    className: "carousel-item__img",
+                    className: "carousel-item-img",
                     src: movie.imgSrc
                 })
             )

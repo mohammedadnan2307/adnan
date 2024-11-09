@@ -11,7 +11,7 @@ async function fetchLatestLetterboxdFeed() {
         const xmlDoc = parser.parseFromString(rssText, "application/xml");
 
         const items = xmlDoc.querySelectorAll("item");
-        const numberOfItems = Math.min(10, items.length);
+        const numberOfItems = Math.min(5, items.length);
 
         for (let i = 0; i < numberOfItems; i++) {
             const item = items[i];

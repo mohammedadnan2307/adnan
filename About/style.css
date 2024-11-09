@@ -109,30 +109,26 @@ h1.sub-titles {
 
 .carousel {
     width: 100%;
-    padding: 30px;
-    /*padding-top: 80px;*/
+    padding: 2rem 0;
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     scrollbar-width: none;
     overflow-x: auto;
-    max-inline-size: 1100px;
+    max-inline-size: 75.5vw;
 }
 
 .carousel-container {
     white-space: nowrap;
-    margin: 70px 0px;
-    padding-bottom: 10px;
+    margin: 4rem auto 4rem;
 }
 
 .carousel-item {
     width: 200px;
     height: 300px;
     border-radius: 20px;
-    background-color: #95bcd6;
     overflow: hidden;
     margin-right: 10px;
-    margin-top: 70px;
     display: inline-block;
     cursor: pointer;
     -webkit-transition: 1000ms all;
@@ -149,12 +145,7 @@ h1.sub-titles {
     object-fit: cover;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
-    /* For Chrome, Safari, and Edge: hide scrollbar */
-}
-
-.carousel-container::-webkit-scrollbar {
+.carousel-container::-webkit-scrollbar, .carousel::-webkit-scrollbar {
     display: none;
     /* For Chrome, Safari, and Edge: hide scrollbar */
 }
@@ -268,6 +259,22 @@ a:hover {
         text-align: center;
     }
 
+    .carousel {
+        padding: 0px;
+        max-inline-size: 59vw;
+    }
+
+    .tile-img, .tile-img:hover {
+        transform: none;
+        transition: none;
+    }
+
+    .carousel-item:hover~.carousel-item, .carousel-container:hover .carousel-item, .carousel-container:hover .carousel-item:hover {
+        -webkit-transform: none;
+        transform: none;
+        opacity: unset;
+    }
+
 }
 
 /* Tablet and Laptop */
@@ -297,6 +304,11 @@ a:hover {
     h1.sub-titles {
         margin-top: 0;
     }
+
+    .carousel {
+        max-inline-size: 72vw;
+    }
+
 }
 
 @media (min-width:1200px) {

@@ -12,9 +12,9 @@
 
     <!-- Title & Icons -->
     <title>Adnan | About</title>
-    <link rel="icon" type="image/png" href="https://d26icxokvtdw5w.cloudfront.net/images//favicon/favicon-white/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://d26icxokvtdw5w.cloudfront.net/images//favicon/favicon-white/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://d26icxokvtdw5w.cloudfront.net/images//favicon/favicon-white/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="https://d26icxokvtdw5w.cloudfront.net/images/favicon/favicon-white/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d26icxokvtdw5w.cloudfront.net/images/favicon/favicon-white/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://d26icxokvtdw5w.cloudfront.net/images/favicon/favicon-white/favicon-16x16.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../common/styles.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="music.css" />
+    <link rel="stylesheet" href="src/music.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,11 +85,12 @@
             <div class="info-row">
                 <h1 class="intro-title">About Adnan</h1>
                 <p>
-                    I grew up in Annur, Coimbatore. I am currently doing my Bachelors in Electronics at BITS Pilani, Hyderabad. My favorite numbers are 4<sup>n</sup>. I play games and love Music and Maths.
+                    Hey there! So glad you stumbled upon my little corner of the internet. Something about me, I enjoy working on cutting-edge 
+                    projects and developing new technologies in the hope that these will one day translate back to the real world and 
+                    have a direct impact on our lives.
                 </p>
                 <p>
-                    These days my time is spent learning, sleeping, coding, debugging, debugging and debugging. Out there, you can find me playing
-                    badminton and jogging through the streets void of dogs.
+                    Outside work, I enjoy listening to and playing music, watching evocative cinema and exploring the world.
                 </p>
             </div>
 
@@ -104,23 +105,30 @@
         <a href="https://github.com/mohammedadnan2307" class="skill-tile code-tile">
             <h2 class="tile-title">Code</h2>
             <div class="tile-holder">
-                <img src="https://d26icxokvtdw5w.cloudfront.net/images/code.png" />
+                <img class="tile-img" src="https://d26icxokvtdw5w.cloudfront.net/images/code.jpg" />
             </div>
         </a>
 
         <a href="https://lichess.org/@/Adnan-Y" class="skill-tile chess-tile">
             <h2 class="tile-title">Chess</h2>
             <div class="tile-holder">
-                <img src="https://d26icxokvtdw5w.cloudfront.net/images/chess.png" style="border-radius: 100%" />
+                <img class="tile-img" src="https://d26icxokvtdw5w.cloudfront.net/images/chess.png" style="border-radius: 100%" />
             </div>
         </a>
 
         <a href="https://www.instagram.com/p/CJY8qtCHzKO/" class="skill-tile dance-tile">
             <h2 class="tile-title">Dance</h2>
             <div class="tile-holder">
-                <img src="https://d26icxokvtdw5w.cloudfront.net/images/dance.jpg" />
+                <img class="tile-img" src="https://d26icxokvtdw5w.cloudfront.net/images/dance.jpg" />
             </div>
         </a>
+
+        <div class="skill-tile movie-tile">
+
+            <h2 class="tile-title">Recent Watches</h2>
+            <div class="carousel" id="root"></div>
+
+        </div>
 
         <div id="fav-songs" class="skill-tile music-tile">
 
@@ -160,8 +168,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <!-- React Scripts -->
+    <script crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin="anonymous" src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
     <!-- My Scripts -->
-    <script src="music.js"></script>
+    <script src="src/music.js"></script>
+    <script src="src/movie.js"></script>
     <script src="../common/index.js" charset="utf-8"></script>
 
 </body>

@@ -23,10 +23,10 @@ for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
         userChoice = this.id;
         document.querySelector("#dropdownMenu2").textContent = userOption;
         if (userChoice == 3) {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots seperated by comma's");
+            document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots seperated by comma");
         }
         else {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter co-efficients seperated by comma's");
+            document.querySelector("#coefInput").setAttribute("placeholder", "Enter the equation");
         }
     });
 }

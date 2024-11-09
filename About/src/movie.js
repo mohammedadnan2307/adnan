@@ -4,7 +4,7 @@ async function fetchLatestLetterboxdFeed() {
     try {
         const proxyUrl = "https://d107bo5xeh82xz.cloudfront.net/";
 
-        const response = await fetch(proxyUrl);
+        const response = await fetch(proxyUrl, { mode: 'no-cors' });
         const rssText = await response.text();
 
         const parser = new DOMParser();

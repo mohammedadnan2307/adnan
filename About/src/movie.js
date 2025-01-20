@@ -2,8 +2,10 @@ var movies = [];
 
 async function fetchLatestLetterboxdFeed() {
     try {
-        const proxyUrl = "https://d107bo5xeh82xz.cloudfront.net/";
 
+        const feedUrl = encodeURIComponent("https://letterboxd.com/adnan2307/rss/");
+        const proxyUrl = `https://cors-proxy-adnan.glitch.me/proxy?url=${feedUrl}`;
+        
         const response = await fetch(proxyUrl);
         const rssText = await response.text();
 
@@ -27,7 +29,7 @@ async function fetchLatestLetterboxdFeed() {
             movies.push({
                 id: i,
                 movieLink: link,
-                imgSrc: imgURL
+                imgSrc: imgURL,
             });
         }
 
@@ -52,7 +54,7 @@ function renderCarouselItems() {
             React.createElement("a", { href: movie.movieLink },
                 React.createElement("img", {
                     className: "carousel-item-img",
-                    src: movie.imgSrc
+                    src: movie.imgSrc,
                 })
             )
         );

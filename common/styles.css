@@ -200,6 +200,11 @@ nav {
         margin: 4rem auto 4em;
     }
 
+    .tile-img, .tile-img:hover {
+        transform: none;
+        transition: none;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {

@@ -213,7 +213,7 @@ function generateEquation(roots, n) {
     }
 
     if (n === 1) {
-        return ("x = " + coefList[0]);
+        return [-1 * roots[0]];
     }
     else {
         for (let i = n - 1; i > 1; i--) {

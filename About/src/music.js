@@ -11,7 +11,6 @@ const cover = document.getElementById('cover');
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
-// Song titles
 const songs = ['Dancing Barefoot', 'Libera Me', 'Oru Naalaikkul', 'Naan'];
 
 const songDirectory = {
@@ -150,7 +149,6 @@ function DurTime (e) {
 	} 
 
 	// define seconds duration
-	
 	get_sec_d (duration);
 
 	// change duration DOM

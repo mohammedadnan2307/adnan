@@ -60,6 +60,12 @@ h2 {
 .work-tiles a:hover {
     color: white;
     text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.work-tile:hover .tile-img {
+    transform: scale(1.05);
 }
 
 .polynomial-tile {
@@ -109,7 +115,7 @@ h2 {
     
 }
 
-/* Tablet and Laptop */
+/* Tablet and Laptop (>1200px) */
 
 @media (min-width: 768px) and (max-width: 1300px) {
 

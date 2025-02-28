@@ -1,20 +1,11 @@
-/* OVERLAY FUNCTIONS */
-
-function openNav() {
-    if ((screen.width >= 768) && (screen.width <= 1300)) {
-        document.getElementById("myNav").style.width = "50%";
-    }
-    else {
-        document.getElementById("myNav").style.width = "100%";
-    }
-}
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-
-/* POLYNOMIAL & RELATED  */
-
 var coefInput, result;
+
+window.onload = function () {
+    let inputField = document.querySelector("#coefInput");
+    if (inputField) {
+        inputField.focus();
+    }
+};
 
 for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
 
@@ -23,7 +14,7 @@ for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
         userChoice = this.id;
         document.querySelector("#dropdownMenu2").textContent = userOption;
         if (userChoice == 3) {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots seperated by comma");
+            document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots separated by comma");
         }
         else {
             document.querySelector("#coefInput").setAttribute("placeholder", "Enter the equation");

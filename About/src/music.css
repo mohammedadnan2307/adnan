@@ -27,18 +27,6 @@
   width: 110px;
 }
 
-/*.img-container::after {
-  content: '';
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  transform: translate(-50%, 50%);
-}*/
-
 .img-container img {
   border-radius: 50%;
   object-fit: cover;
@@ -135,39 +123,39 @@
 
 @media (min-width: 768px) and (max-width: 1300px) {
     
-    #fav-songs {
-        padding: 45px 0 0;
-    }
+  #fav-songs {
+    padding: 45px 0 0;
+  }
 }
 
 /* Mobiles */
 
 @media (max-width: 767px) {
 
-    #fav-songs{
-        padding: 1rem 0 0;
-    }
+  #fav-songs{
+    padding: 1rem 0 0;
+  }
 
-    .music-container {
-        margin: 50px auto;
-        padding: 20px 0;
-    }
+  .music-container {
+    margin: 50px auto;
+    padding: 20px 0;
+  }
 
-    .img-container img {
-        margin-left: 1rem;
-        width: 85px;
-        height: 85px;
-    }
+  .img-container img {
+    margin-left: 1rem;
+    width: 85px;
+    height: 85px;
+  }
 
-    .img-container {
-        height: 5rem;
-    }
+  .img-container {
+    height: 5rem;
+  }
 
-    .music-info {
-        padding: 10px;
-    }
+  .music-info {
+    padding: 10px;
+  }
 
-    .navigation button {
-        margin-left: 0;
-    }
+  .navigation button {
+    margin-left: 0;
+  }
 }

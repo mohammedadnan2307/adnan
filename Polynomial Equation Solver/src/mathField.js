@@ -92,7 +92,9 @@ function termsToCoef(terms) {
 
 function submitFunc() {
     if (userOption === "none") {
-        inputError("Choose an Option");
+        if (latexFormat.trim() !== "") {
+            inputError("Choose an Option");
+        }
         return false;
     }
     if (userChoice == 3) {

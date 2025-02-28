@@ -184,29 +184,29 @@ a:hover {
 
 .code-tile {
     background: linear-gradient(338.83deg, #f8c6ff -3.41%, rgba(255, 196, 255, 0) 52.31%), #ffeec4;
-    }
+}
 
 .chess-tile {
     background: linear-gradient(6.03deg, #dacdff .5%, rgba(218, 205, 255, 0) 46.89%), #ffeaee;
-    }
+}
 
 .dance-tile {
     background: linear-gradient(314.25deg, rgba(10, 185, 149, .7) 1.09%, rgba(10, 185, 149, 0) 43.26%), #dacdff;
-    }
+}
 
 .movie-tile {
     background: linear-gradient(120deg, rgba(255, 115, 115, 0.7) 0%, rgba(72, 52, 212, 0.5) 40%, rgba(72, 52, 212, 0) 70%), #ffdac1;
-    }
+}
 
 .music-tile {
     background: linear-gradient(0deg, rgba(247, 247, 247, 1) 23.8%, rgba(252, 221, 221, 1) 92%);
-    }
+}
 
 .code-tile:hover, .chess-tile:hover, .dance-tile:hover, .movie-tile:hover {
     background: linear-gradient(223.65deg, rgba(10, 207, 131, 0) 60.59%, rgba(10, 207, 131, .62) 113.24%), #191919;
 }
 
-/* Media Querries */
+/* Media Queries */
 
 @media (min-width: 544px) {
 

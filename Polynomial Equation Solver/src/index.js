@@ -4,6 +4,16 @@ window.onload = function () {
     let inputField = document.querySelector("#coefInput");
     if (inputField) {
         inputField.focus();
+
+        // Simulate an Enter key press
+        let enterEvent = new KeyboardEvent("keypress", {
+            key: "Enter",
+            keyCode: 13,
+            code: "Enter",
+            which: 13,
+            bubbles: true
+        });
+        inputField.dispatchEvent(enterEvent);
     }
 };
 

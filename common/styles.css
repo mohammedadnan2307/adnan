@@ -172,7 +172,7 @@ nav {
     border-radius: 100%;
 }
 
-/* Media Querries */
+/* Media Queries */
 
 @media (max-width: 767px) {
 
@@ -198,11 +198,6 @@ nav {
         border-radius: 20px;
         box-shadow: 0 52px 74px rgba(0,21,64,.138559);
         margin: 4rem auto 4em;
-    }
-
-    .tile-img, .tile-img:hover {
-        transform: none;
-        transition: none;
     }
 
 }

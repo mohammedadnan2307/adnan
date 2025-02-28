@@ -1,5 +1,3 @@
-/* MathQuill */
-
 var mathFieldSpan = document.getElementById('coefInput');
 var latexFormat = "";
 

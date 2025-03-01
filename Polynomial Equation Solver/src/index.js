@@ -17,6 +17,10 @@ window.onload = function () {
     }
 };
 
+function updatePlaceholder(placeholderText) {
+    document.documentElement.style.setProperty("--mathquill-placeholder", `"${placeholderText}"`);
+}
+
 for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
 
     document.querySelectorAll(".dropdown-item")[i].addEventListener("click", function () {
@@ -24,10 +28,10 @@ for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
         userChoice = this.id;
         document.querySelector("#dropdownMenu2").textContent = userOption;
         if (userChoice == 3) {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots separated by comma");
+            updatePlaceholder("Enter roots, e.g., 1,2,3...");
         }
         else {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter the equation");
+            updatePlaceholder("Enter expression, e.g., x^2 - 4x + 4");
         }
     });
 }

@@ -7,9 +7,21 @@ var mathField = MQ.MathField(mathFieldSpan, {
     handlers: {
         edit: function () { // useful event handlers
             latexFormat = mathField.latex(); // simple API
+
+            // Add or remove placeholder effect
+            if (mathField.latex().trim() === '') {
+                mathFieldSpan.classList.add('empty');
+            } else {
+                mathFieldSpan.classList.remove('empty');
+            }
         }
     }
 });
+
+// Set placeholder initially if empty
+if (mathField.latex().trim() === '') {
+    mathFieldSpan.classList.add('empty');
+}
 
 /* Math Field & Errors */
 
@@ -78,7 +90,7 @@ function termsToCoef(terms) {
     }
     let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
     if (findDuplicates(powers).length > 0) {
-        inputError("Multilpe usage of an exponent");
+        inputError("Multiple usage of an exponent");
         return false;
     }
     let maxDegree = Math.max(...powers), sortedCoef;
@@ -121,7 +133,7 @@ function submitFunc() {
         for (let i = 0; i < latexFormat.length; i++) {
             let asciiValue = latexFormat[i].charCodeAt(0);
             if ((acceptedCharacters.includes(asciiValue)) || ((asciiValue >= 48) && (asciiValue <= 57))) {
-                if ((asciiValue === 43) || (asciiValue === 45)) {
+                if (((asciiValue === 43) || (asciiValue === 45)) && (term !== "")) {
                     terms.push(term);
                     term = "";
                 }
@@ -132,7 +144,7 @@ function submitFunc() {
                 term += latexFormat[i];
             }
             else {
-                inputError("Invalid Equation");
+                inputError("Invalid Expression");
                 return false;
             }
         }

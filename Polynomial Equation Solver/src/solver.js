@@ -1,6 +1,6 @@
 var fx, fdx, valueOfHigherLimit = 0, valueOfLowerLimit = 0, results = [], displayMsg = "";
 const preciseValue = 5;
-const errorMsg = "Oops, as the slope is steeper, we could'nt find it! \nEnter a value which might be near one of the";
+const errorMsg = "Oops, as the slope is steeper, we couldn't find it! \nEnter a value which might be near one of the";
 
 function derivativeCalculator(coefArray) {
     let n = coefArray.length - 1;

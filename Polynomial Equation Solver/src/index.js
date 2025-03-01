@@ -27,7 +27,7 @@ for (let i = 0; i < document.querySelectorAll(".dropdown-item").length; i++) {
             document.querySelector("#coefInput").setAttribute("placeholder", "Enter roots separated by comma");
         }
         else {
-            document.querySelector("#coefInput").setAttribute("placeholder", "Enter the equation");
+            document.querySelector("#coefInput").setAttribute("placeholder", "Enter the Expression");
         }
     });
 }

@@ -78,7 +78,7 @@ function termsToCoef(terms) {
     }
     let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
     if (findDuplicates(powers).length > 0) {
-        inputError("Multilpe usage of an exponent");
+        inputError("Multiple usage of an exponent");
         return false;
     }
     let maxDegree = Math.max(...powers), sortedCoef;
@@ -121,7 +121,7 @@ function submitFunc() {
         for (let i = 0; i < latexFormat.length; i++) {
             let asciiValue = latexFormat[i].charCodeAt(0);
             if ((acceptedCharacters.includes(asciiValue)) || ((asciiValue >= 48) && (asciiValue <= 57))) {
-                if ((asciiValue === 43) || (asciiValue === 45)) {
+                if (((asciiValue === 43) || (asciiValue === 45)) && (term !== "")) {
                     terms.push(term);
                     term = "";
                 }
@@ -132,7 +132,7 @@ function submitFunc() {
                 term += latexFormat[i];
             }
             else {
-                inputError("Invalid Equation");
+                inputError("Invalid Expression");
                 return false;
             }
         }

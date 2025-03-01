@@ -39,6 +39,24 @@ h1 {
   appearance: auto;
 }
 
+:root {
+  --mathquill-placeholder: "Choose an option";
+}
+
+.empty::before {
+  content: var(--mathquill-placeholder);
+  color: grey;
+  position: absolute;
+  pointer-events: none;
+  font-style: italic;
+  font-family: "Cambria Math", serif;
+  font-size: 1.25rem;
+  opacity: 0.7;
+  /* Align vertically */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .mq-math-mode .mq-root-block, .mq-root-block {
   vertical-align: text-top;
 }
@@ -141,6 +159,11 @@ button.go {
     padding: 0 1rem;
     font-size: 1.5rem;
   }
+
+  .empty::before {
+    font-size: 1rem;
+  }
+
 }
 
 /* Tablet and Laptop (>1200px) */

@@ -7,9 +7,21 @@ var mathField = MQ.MathField(mathFieldSpan, {
     handlers: {
         edit: function () { // useful event handlers
             latexFormat = mathField.latex(); // simple API
+
+            // Add or remove placeholder effect
+            if (mathField.latex().trim() === '') {
+                mathFieldSpan.classList.add('empty');
+            } else {
+                mathFieldSpan.classList.remove('empty');
+            }
         }
     }
 });
+
+// Set placeholder initially if empty
+if (mathField.latex().trim() === '') {
+    mathFieldSpan.classList.add('empty');
+}
 
 /* Math Field & Errors */
 

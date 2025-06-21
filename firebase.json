@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/polynomial-solver",
+        "destination": "/polynomial-solver/index.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about/index.html"
+      },
+      {
+        "source": "/encrypt-decrypt",
+        "destination": "/encrypt-decrypt/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

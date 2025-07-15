@@ -8,8 +8,9 @@ const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
-const currTime = document.querySelector('#currTime');
-const durTime = document.querySelector('#durTime');
+
+// const currTime = document.querySelector('#currTime');
+// const durTime = document.querySelector('#durTime');
 
 const songs = ['Dancing Barefoot', 'Libera Me', 'Oru Naalaikkul', 'Naan'];
 
@@ -124,7 +125,7 @@ function DurTime (e) {
 	get_sec (currentTime,sec);
 
 	// change currentTime DOM
-	currTime.innerHTML = min +':'+ sec;
+	// currTime.innerHTML = min +':'+ sec;
 
 	// define minutes duration
 	let min_d = (isNaN(duration) === true)? '0':
@@ -152,7 +153,7 @@ function DurTime (e) {
 	get_sec_d (duration);
 
 	// change duration DOM
-	durTime.innerHTML = min_d +':'+ sec_d;
+	// durTime.innerHTML = min_d +':'+ sec_d;
 		
 };
 

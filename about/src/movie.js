@@ -4,9 +4,12 @@ async function fetchLatestLetterboxdFeed() {
     try {
 
         const feedUrl = encodeURIComponent("https://letterboxd.com/adnan2307/rss/");
-        const proxyUrl = `https://cors-proxy-adnan.glitch.me/proxy?url=${feedUrl}`;
+        const proxyUrl = `https://cors-proxy-three-liart.vercel.app/api/proxy?url=${feedUrl}`;
         
         const response = await fetch(proxyUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const rssText = await response.text();
 
         const parser = new DOMParser();

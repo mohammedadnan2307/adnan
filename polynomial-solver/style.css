@@ -21,9 +21,12 @@ h1 {
 .form {
   margin: 2rem auto 0;
   text-align: center;
+  white-space: nowrap; /* Prevents the Go button from dropping to the next line on load */
 }
 
 #coefInput {
+  display: inline-block;
+  vertical-align: middle;
   width: 50%;
   min-height: 3rem;
   border: 1px solid black;
@@ -37,6 +40,7 @@ h1 {
   font-family: 'Lora', serif;
   font-size: 1.25rem;
   appearance: auto;
+  white-space: normal; /* Reset for mathquill content */
 }
 
 :root {
@@ -180,10 +184,4 @@ button.go {
     height: 3rem;
   }
 }
-
-@media (min-width: 768px) {
-  .form button.go {
-    position: relative;
-    top: -4px;
-  }
-}
+

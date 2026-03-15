@@ -112,7 +112,6 @@ nav {
 .overlay a {
     padding: 0.5rem;
     text-decoration: none;
-    font-size: 2.25rem;
     color: black;
     display: block;
     font-family: 'EB Garamond', serif;
@@ -159,7 +158,6 @@ nav {
 }
 
 .tile-holder img {
-    max-width: 100%;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 52px 74px rgba(0,21,64,.138559);

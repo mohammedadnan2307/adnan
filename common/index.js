@@ -10,21 +10,9 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 
-async function preFetchLatestLetterboxdFeed() {
-    try {
-
-        const feedUrl = encodeURIComponent("https://letterboxd.com/adnan2307/rss/");
-        const proxyUrl = `https://cors-proxy-three-liart.vercel.app/api/proxy?url=${feedUrl}`;
-        await fetch(proxyUrl);
-    } catch (error) {
-        console.error("Error fetching the RSS feed:", error);
-    }
-}
-preFetchLatestLetterboxdFeed();
 
 (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        // Define the chatbase function as a queue until the script is loaded
         window.chatbase = (...args) => {
             if (!window.chatbase.q) {
                 window.chatbase.q = [];
@@ -32,7 +20,6 @@ preFetchLatestLetterboxdFeed();
             window.chatbase.q.push(args);
         };
 
-        // Add a proxy for handling method calls
         window.chatbase = new Proxy(window.chatbase, {
             get(target, prop) {
                 if (prop === "q") {

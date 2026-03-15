@@ -83,7 +83,7 @@ function termsToCoef(terms) {
                 coefArray.push(coefValue);
             }
         }
-        if (notConst == false) {
+        if (!notConst) {
             powers.push(0);
             coefArray.push(Number(term));
         }

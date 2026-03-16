@@ -38,13 +38,7 @@ function roundPrecise(n, decimalPlaces = preciseValue) {
 }
 
 function checkFunc(a, b, n = 4) {
-    let p = a.toFixed(n);
-    let q = b.toFixed(n);
-    if (p === q) {
-        return true;
-    } else {
-        return false;
-    }
+    return a.toFixed(n) === b.toFixed(n);
 }
 
 function manipulator(coef, x, n) {
@@ -111,7 +105,7 @@ function solve(coef, n) {
                                 continue;
                             }
                             else {
-                                return results;;
+                                return results;
                             }
                         } else {
                             return results;

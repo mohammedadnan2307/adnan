@@ -19,10 +19,13 @@ nav {
 }
 
 #navbar-left a {
-    padding: 0 2rem;
     color: black;
     font-size: 1.25rem;
     text-decoration: none;
+}
+
+#navbar-left > a, #navbar-left > .dropdown {
+    margin: 0 2rem;
 }
 
 #navbar-right {
@@ -32,7 +35,7 @@ nav {
 }
 
 #navbar-right a {
-    padding: 0 1.5em;
+    margin: 0 1.5em;
     color: black;
     font-size: 1.5rem;
 }
@@ -45,6 +48,7 @@ nav {
 
 .dropdown {
     display: inline-block;
+    position: relative;
 }
 
 .dropbtn {
@@ -53,23 +57,31 @@ nav {
 }
 
 .dropdown-content {
-    padding: 1.5rem 2rem 2rem;
+    padding: 1rem 1.25rem 1.25rem;
     background: #232320;
     box-shadow: 0 4px 4px rgb(0 0 0 / 6%), 0 19px 20px rgb(0 0 0 / 15%);
     border-radius: 20px;
-    min-width: 16.1rem;
-    display: none;
+    width: max-content;
     position: absolute;
+    top: 100%;
+    left: 50%;
     z-index: 1;
     list-style-type: none;
+    
+    /* Animation properties for smooth expansion */
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -15px);
+    transition: all 0.3s ease;
 }
 
 #navbar-left .dropdown-content a {
     font-size: 1.125rem;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.5rem;
     display: block;
-    text-align: left;
+    text-align: center;
     color: #fff;
+    white-space: nowrap;
 }
 
 #navbar-left a:hover, #navbar-right a:hover {
@@ -77,7 +89,9 @@ nav {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
 }
 
 /* Curtain Menu */
@@ -112,7 +126,6 @@ nav {
 .overlay a {
     padding: 0.5rem;
     text-decoration: none;
-    font-size: 2.25rem;
     color: black;
     display: block;
     font-family: 'EB Garamond', serif;
@@ -159,7 +172,6 @@ nav {
 }
 
 .tile-holder img {
-    max-width: 100%;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 52px 74px rgba(0,21,64,.138559);
@@ -184,7 +196,7 @@ nav {
     }
 
     #navbar-right a {
-        padding: 0 0.6rem;
+        margin: 0 0.6rem;
     }
 
     #navbar-left {
@@ -213,8 +225,11 @@ nav {
         left: 2%;
     }
 
+    #navbar-left > a, #navbar-left > .dropdown {
+        margin: 0 0.75rem;
+    }
+
     #navbar-left a {
-        padding: 0 0.75rem;
         color: black;
         font-size: 1.25rem;
     }

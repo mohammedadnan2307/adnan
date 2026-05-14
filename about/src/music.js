@@ -9,8 +9,6 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
-
-
 const songs = ['Dancing Barefoot', 'Libera Me', 'Oru Naalaikkul', 'Naan'];
 
 const songDirectory = {
@@ -29,9 +27,10 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = song;
-  var fileName = songDirectory[song]
+  const fileName = songDirectory[song];
   audio.src = `https://d26icxokvtdw5w.cloudfront.net/audio/${fileName}.mp3`;
   cover.src = `https://d26icxokvtdw5w.cloudfront.net/images/${fileName}.jpg`;
+  cover.alt = `${song} album cover`;
 }
 
 // Play song
@@ -93,8 +92,6 @@ function setProgress(e) {
 
   audio.currentTime = (clickX / width) * duration;
 }
-
-
 
 // Event listeners
 playBtn.addEventListener('click', () => {

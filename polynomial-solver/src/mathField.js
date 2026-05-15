@@ -1,8 +1,8 @@
-var mathFieldSpan = document.getElementById('coefInput');
-var latexFormat = "";
+const mathFieldSpan = document.getElementById('coefInput');
+let latexFormat = "";
 
-var MQ = MathQuill.getInterface(2); // for backcompat
-var mathField = MQ.MathField(mathFieldSpan, {
+const MQ = MathQuill.getInterface(2); // for backcompat
+const mathField = MQ.MathField(mathFieldSpan, {
     spaceBehavesLikeTab: true, // configurable
     handlers: {
         edit: function () { // useful event handlers
@@ -25,14 +25,14 @@ if (mathField.latex().trim() === '') {
 
 /* Math Field & Errors */
 
-var userOption = "none", userChoice, coef;
+let userOption = "none", userChoice, coef;
 
 function inputError(errMsg) {
     alert(errMsg);
 }
 
 function termsToCoef(terms) {
-    let powers = [], coefArray = [];
+    const powers = [], coefArray = [];
     for (let i = 0; i < terms.length; i++) {
         let notConst = false, term = terms[i];
         for (let j = 0; j < term.length; j++) {
@@ -88,15 +88,15 @@ function termsToCoef(terms) {
             coefArray.push(Number(term));
         }
     }
-    let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+    const findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index);
     if (findDuplicates(powers).length > 0) {
         inputError("Multiple usage of an exponent");
         return false;
     }
-    let maxDegree = Math.max(...powers), sortedCoef;
-    sortedCoef = new Array(maxDegree + 1).fill(0);
+    const maxDegree = Math.max(...powers);
+    const sortedCoef = new Array(maxDegree + 1).fill(0);
     for (let i = 0; i < powers.length; i++) {
-        let pos = maxDegree - powers[i];
+        const pos = maxDegree - powers[i];
         sortedCoef[pos] = coefArray[i];
     }
     return sortedCoef;
@@ -110,7 +110,7 @@ function submitFunc() {
         return false;
     }
     if (userChoice == 3) {
-        var userInput = latexFormat;
+        let userInput = latexFormat;
         userInput = userInput.trim();
         if (userInput.length === 0) {
             return false;
@@ -129,9 +129,10 @@ function submitFunc() {
         return true;
     }
     else {
-        let term = "", terms = [], acceptedCharacters = [120, 43, 45, 88, 123, 125, 46, 94];
+        let term = "";
+        const terms = [], acceptedCharacters = [120, 43, 45, 88, 123, 125, 46, 94];
         for (let i = 0; i < latexFormat.length; i++) {
-            let asciiValue = latexFormat[i].charCodeAt(0);
+            const asciiValue = latexFormat[i].charCodeAt(0);
             if ((acceptedCharacters.includes(asciiValue)) || ((asciiValue >= 48) && (asciiValue <= 57))) {
                 if (((asciiValue === 43) || (asciiValue === 45)) && (term !== "")) {
                     terms.push(term);
@@ -159,7 +160,8 @@ function submitFunc() {
 /* Plot Graph */
 
 function plotFunctionEquation(coefArray) {
-    let equation = '', n = coefArray.length;
+    let equation = '';
+    const n = coefArray.length;
     for (let i = 0; i < n; i++) {
         if (coefArray[i] !== 0) {
             if (coefArray[i] > 0) {
@@ -173,27 +175,28 @@ function plotFunctionEquation(coefArray) {
     return equation;
 }
 
-var showTangent = false;
+let showTangent = false;
 document.addEventListener("click", function (e) {
 
     if (e.target && e.target.id === "graph-btn") {
 
-        var fxEquation = plotFunctionEquation(coefInput), fdxEquation = plotFunctionEquation(derivativeCalculator(coefInput));
+        const fxEquation = plotFunctionEquation(coefInput);
+        const fdxEquation = plotFunctionEquation(derivativeCalculator(coefInput));
         document.getElementById("graph").style.display = "block";
 
         /* graph display size */
         let width = 650, height = 650;
         if (screen.width < 1024) {
-            let contentsBounds = document.body.getBoundingClientRect();
+            const contentsBounds = document.body.getBoundingClientRect();
             width = 800;
             height = 500;
-            let ratio = contentsBounds.width / width;
+            const ratio = contentsBounds.width / width;
             width *= ratio;
             height *= ratio;
         }
 
         /* To plot points on the graph */
-        let plotPoints = [];
+        const plotPoints = [];
         if (userChoice == 3) {
             for (let i = 0; i < coef.length; i++) {
                 plotPoints.push([coef[i], 0]);
@@ -211,13 +214,15 @@ document.addEventListener("click", function (e) {
             }
         }
 
-        let additionalGraph = {
+        const additionalGraph = {
             fn: fxEquation,
             range: [valueOfLowerLimit, valueOfHigherLimit]
-        }, tip = {
+        };
+        const tip = {
             xLine: true,
             yLine: true,
-        }, data = [
+        };
+        const data = [
             {
                 fn: fxEquation,
                 color: 'black',
@@ -245,16 +250,16 @@ document.addEventListener("click", function (e) {
         }
         if (showTangent === true) {
             tip.renderer = function (x, y) {
-                let fdxValue = functionPlot.$eval.builtIn({ fn: fdxEquation }, 'fn', { x });
+                const fdxValue = functionPlot.$eval.builtIn({ fn: fdxEquation }, 'fn', { x });
                 return `(${roundPrecise(x, 3)}, ${roundPrecise(y, 3)}) Slope: ${roundPrecise(fdxValue, 3)}`;
             };
             data[0].derivative = {
                 fn: fdxEquation,
                 updateOnMouseMove: true
-            }
+            };
         }
 
-        let options = {
+        const options = {
             target: '#graph',
             tip,
             width,

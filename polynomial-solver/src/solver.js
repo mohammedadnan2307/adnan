@@ -1,10 +1,10 @@
-var fx, fdx, valueOfHigherLimit = 0, valueOfLowerLimit = 0, results = [], displayMsg = "";
+let fx, fdx, valueOfHigherLimit = 0, valueOfLowerLimit = 0, results = [], displayMsg = "";
 const preciseValue = 5;
 const errorMsg = "Oops, as the slope is steeper, we couldn't find it! \nEnter a value which might be near one of the";
 
 function derivativeCalculator(coefArray) {
-    let n = coefArray.length - 1;
-    let derivative = new Array(n);
+    const n = coefArray.length - 1;
+    const derivative = new Array(n);
     for (let i = 0; i < n; i++) {
         derivative[i] = coefArray[i] * (n - i);
     }
@@ -13,7 +13,7 @@ function derivativeCalculator(coefArray) {
 
 function controlFunction(coef, userChoice) {
     results = [];
-    let n = coef.length - 1;
+    const n = coef.length - 1;
     if (userChoice === "1") {
         displayMsg = "The roots are: ";
         return solve(coef, n);
@@ -52,7 +52,7 @@ function manipulator(coef, x, n) {
 }
 
 function analyze(coef, n) {
-    var averageRoot = -(coef[1] / coef[0]) / n;
+    const averageRoot = -(coef[1] / coef[0]) / n;
     return averageRoot;
 }
 
@@ -65,7 +65,8 @@ function solve(coef, n) {
         }
     }
     else {
-        let x, x2, limit = 500, counter = 0;
+        let x, x2, counter = 0;
+        const limit = 500;
         x = analyze(coef, n);
         do {
             manipulator(coef, x, n);
@@ -86,7 +87,7 @@ function solve(coef, n) {
                         if (n % 2 === 0) {
                             return results;
                         } else {
-                            let response = prompt(errorMsg + "Roots");
+                            const response = prompt(errorMsg + "Roots");
                             if (response) {
                                 x = Number(response);
                                 counter = 0;
@@ -98,7 +99,7 @@ function solve(coef, n) {
                         }
                     } else {
                         if (n % 2 === 0) {
-                            let response = prompt(errorMsg + "Turning Points");
+                            const response = prompt(errorMsg + "Turning Points");
                             if (response) {
                                 x = Number(response);
                                 counter = 0;
@@ -125,8 +126,8 @@ function solve(coef, n) {
 }
 
 function degTwo(a, b, c) {
-    let x1, x2, d;
-    d = b * b - 4 * a * c;
+    let x1, x2;
+    const d = b * b - 4 * a * c;
     if (d >= 0) {
         x1 = (-b + Math.sqrt(d)) / (2 * a);
         x2 = (-b - Math.sqrt(d)) / (2 * a);
@@ -136,16 +137,16 @@ function degTwo(a, b, c) {
 }
 
 function degOne(a, b) {
-    let x = -(b / a);
+    const x = -(b / a);
     results.push(roundPrecise(x));
     return results;
 }
 
 function curveArea(coef, n) {
-    var area, lowerArea = 0, higherArea = 0;
+    let lowerArea = 0, higherArea = 0;
     valueOfLowerLimit = Number(prompt("Enter the value lower limit of the interval"));
     valueOfHigherLimit = Number(prompt("Enter the value higher limit of the interval"));
-    var x = valueOfLowerLimit;
+    let x = valueOfLowerLimit;
     for (let i = 0; i <= n; i++) {
         lowerArea += coef[i] * Math.pow(x, n + 1 - i) / (n + 1 - i);
     }
@@ -153,7 +154,7 @@ function curveArea(coef, n) {
     for (let i = 0; i <= n; i++) {
         higherArea += coef[i] * Math.pow(x, n + 1 - i) / (n + 1 - i);
     }
-    area = higherArea - lowerArea;
+    const area = higherArea - lowerArea;
     return roundPrecise(area);
 }
 
@@ -163,16 +164,15 @@ function curveLength(coef, n) {
         coef[i] = coef[i] * (n - i);
     }
 
-    var lengthOfCurve, fx_a, fx_b, fx_ab;
     valueOfLowerLimit = Number(prompt("Enter the value of lower limit of the interval"));
     valueOfHigherLimit = Number(prompt("Enter the value of higher limit of the interval"));
-    var x = valueOfLowerLimit, sum = 0;
+    let x = valueOfLowerLimit, sum = 0;
 
     for (let i = 0; i < n; i++) {
         sum += coef[i] * Math.pow(x, n - i - 1);
     }
 
-    fx_a = Math.sqrt(1 + Math.pow(sum, 2));
+    const fx_a = Math.sqrt(1 + Math.pow(sum, 2));
     x = valueOfHigherLimit;
     sum = 0;
 
@@ -180,7 +180,7 @@ function curveLength(coef, n) {
         sum += coef[i] * Math.pow(x, n - i - 1);
     }
 
-    fx_b = Math.sqrt(1 + Math.pow(sum, 2));
+    const fx_b = Math.sqrt(1 + Math.pow(sum, 2));
     x = (valueOfHigherLimit + valueOfLowerLimit) / 2;
     sum = 0;
 
@@ -188,14 +188,14 @@ function curveLength(coef, n) {
         sum += coef[i] * Math.pow(x, n - i - 1);
     }
 
-    fx_ab = Math.sqrt(1 + Math.pow(sum, 2));
-    lengthOfCurve = (valueOfHigherLimit - valueOfLowerLimit) / 6 * (fx_a + 4 * fx_ab + fx_b);
+    const fx_ab = Math.sqrt(1 + Math.pow(sum, 2));
+    const lengthOfCurve = (valueOfHigherLimit - valueOfLowerLimit) / 6 * (fx_a + 4 * fx_ab + fx_b);
     return roundPrecise(lengthOfCurve);
 }
 
 function generateEquation(roots, n) {
 
-    var coefList = [];
+    const coefList = [];
     for (let i = 0; i < n - 1; i++) {
         coefList.push(0);
     }
@@ -211,7 +211,8 @@ function generateEquation(roots, n) {
     }
     else {
         for (let i = n - 1; i > 1; i--) {
-            let loop = new Array(i), count = 0;
+            const loop = new Array(i);
+            let count = 0;
             loop[count] = 0;
             loop2:
             while (true) {

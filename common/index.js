@@ -1,46 +1,45 @@
-function openNav() {
-    if ((screen.width >= 768) && (screen.width <= 1300)) {
-        document.getElementById("myNav").style.width = "50%";
-    }
-    else {
-        document.getElementById("myNav").style.width = "100%";
-    }
-}
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-
-
+/**
+ * Chatbase widget - lazy loaded on first user interaction
+ * instead of loading eagerly on every page load.
+ */
 (function () {
-    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...args) => {
-            if (!window.chatbase.q) {
-                window.chatbase.q = [];
-            }
-            window.chatbase.q.push(args);
-        };
+    let chatbaseLoaded = false;
 
-        window.chatbase = new Proxy(window.chatbase, {
-            get(target, prop) {
-                if (prop === "q") {
-                    return target.q;
+    function loadChatbase() {
+        if (chatbaseLoaded) return;
+        chatbaseLoaded = true;
+
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+            window.chatbase = (...args) => {
+                if (!window.chatbase.q) {
+                    window.chatbase.q = [];
                 }
-                return (...args) => target(prop, ...args);
-            },
-        });
-    }
+                window.chatbase.q.push(args);
+            };
 
-    const onLoad = function () {
+            window.chatbase = new Proxy(window.chatbase, {
+                get(target, prop) {
+                    if (prop === "q") {
+                        return target.q;
+                    }
+                    return (...args) => target(prop, ...args);
+                },
+            });
+        }
+
         const script = document.createElement("script");
         script.src = "https://www.chatbase.co/embed.min.js";
         script.id = "FUajesT_KLwzqmCoMZkCX";
         script.domain = "www.chatbase.co";
         document.body.appendChild(script);
-    };
-
-    if (document.readyState === "complete") {
-        onLoad();
-    } else {
-        window.addEventListener("load", onLoad);
     }
+
+    // Load chatbase on first user interaction (scroll, click, or touch)
+    const interactionEvents = ["scroll", "click", "touchstart"];
+    interactionEvents.forEach(function (event) {
+        window.addEventListener(event, loadChatbase, { once: true, passive: true });
+    });
+
+    // Fallback: load after 5 seconds if no interaction
+    setTimeout(loadChatbase, 5000);
 })();

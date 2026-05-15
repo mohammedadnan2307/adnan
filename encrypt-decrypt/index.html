@@ -9,6 +9,14 @@
     <meta name="keywords" content="encryption, decryption, adnan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://d26icxokvtdw5w.cloudfront.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin />
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin />
+
     <!-- Title & Icons -->
     <title>Encryption-Decryption | Adnan</title>
     <link rel="icon" type="image/png" href="https://d26icxokvtdw5w.cloudfront.net/images/favicon/favicon-white/favicon.ico" />
@@ -24,11 +32,6 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://d26icxokvtdw5w.cloudfront.net" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Libre+Baskerville&family=Lora&family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
@@ -36,41 +39,7 @@
 <body>
 
     <header>
-
-        <nav class="fixed-top">
-
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <a href="../about/index.html">About</a>
-                    <a href="../polynomial-solver/index.html">Polynomial Solver</a>
-                    <a href="">Encrypt-Decrypt</a>
-                    <a href="mailto:mohammedadnan2307@gmail.com">Contact</a>
-                </div>
-            </div>
-            <span onclick="openNav()" class="menu-toggler"><i class="fas fa-bars"></i></span>
-
-            <div id="navbar-left">
-                <a href="../about/index.html">About</a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Work</a>
-                    <div class="dropdown-content">
-                        <a href="../polynomial-solver/index.html">Polynomial Solver</a>
-                        <a href="">Encrypt-Decrypt</a>
-                    </div>
-                </div>
-                <a href="mailto:mohammedadnan2307@gmail.com">Contact</a>
-            </div>
-
-            <a href="../index.html"><img class="logo" src="https://d26icxokvtdw5w.cloudfront.net/images/quill.png" alt="website-logo" /></a>
-
-            <div id="navbar-right">
-                <a href="https://x.com/MohammedAdnanY3"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://linkedin.com/in/adnan23"><i class="fab fa-linkedin"></i></a>
-            </div>
-
-        </nav>
-
+        <nav class="fixed-top"></nav>
     </header>
 
     <section class="top-section">
@@ -91,12 +60,21 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- React Scripts -->
-    <script defer crossorigin="anonymous" src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script defer crossorigin="anonymous" src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- Navbar Config & Script -->
+    <script>window.navbarConfig = { basePath: "../", currentPage: "encryptDecrypt" };</script>
+    <script defer src="../common/navbar.js"></script>
 
     <!-- My Scripts -->
-    <script defer src="../common/index.js" charset="utf-8" type="text/javascript"></script>
+    <script defer src="../common/index.js" charset="utf-8"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function() {});
+            });
+        }
+    </script>
 
 </body>
 </html>

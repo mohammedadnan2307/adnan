@@ -9,6 +9,14 @@
     <meta name="keywords" content="polynomial, equation, solver, encryption, decryption, adnan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Preconnect hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://d26icxokvtdw5w.cloudfront.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin />
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin />
+
     <!-- Title & Icons -->
     <title>Adnan</title>
     <link rel="icon" type="image/png" href="https://d26icxokvtdw5w.cloudfront.net/images/favicon/favicon-white/favicon.ico" />
@@ -24,51 +32,16 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://d26icxokvtdw5w.cloudfront.net" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=EB+Garamond&family=Merriweather&family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- Prefetch about page video so it's cached when user navigates there -->
+    <link rel="prefetch" href="https://d26icxokvtdw5w.cloudfront.net/videos/greetings_animation.webm" as="video" type="video/webm">
 
 </head>
 <body>
 
     <header>
-
-        <nav class="fixed-top">
-
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <a href="about/index.html">About</a>
-                    <a href="polynomial-solver/index.html">Polynomial Solver</a>
-                    <a href="encrypt-decrypt/index.html">Encrypt-Decrypt</a>
-                    <a href="mailto:mohammedadnan2307@gmail.com">Contact</a>
-                </div>
-            </div>
-            <span onclick="openNav()" class="menu-toggler"><i class="fas fa-bars"></i></span>
-
-            <div id="navbar-left">
-                <a href="about/index.html">About</a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Work</a>
-                    <div class="dropdown-content">
-                        <a href="polynomial-solver/index.html">Polynomial Solver</a>
-                        <a href="encrypt-decrypt/index.html">Encrypt-Decrypt</a>
-                    </div>
-                </div>
-                <a href="mailto:mohammedadnan2307@gmail.com">Contact</a>
-            </div>
-
-            <a href=""><img class="logo" src="https://d26icxokvtdw5w.cloudfront.net/images/quill.png" alt="website-logo" /></a>
-            <div id="navbar-right">
-                <a href="https://x.com/MohammedAdnanY3"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://linkedin.com/in/adnan23"><i class="fab fa-linkedin"></i></a>
-            </div>
-
-        </nav>
-
+        <nav class="fixed-top"></nav>
     </header>
 
     <div class="intro">
@@ -93,14 +66,14 @@
         <a href="polynomial-solver/index.html" class="work-tile polynomial-tile">
             <h2 class="tile-title">Try now</h2>
             <div class="tile-holder">
-                <img class="tile-img" loading="lazy" src="https://d26icxokvtdw5w.cloudfront.net/images/polynomialPhoto.jpg" />
+                <img class="tile-img" loading="lazy" src="https://d26icxokvtdw5w.cloudfront.net/images/polynomialPhoto.jpg" alt="Polynomial Solver preview" />
             </div>
         </a>
 
         <a href="encrypt-decrypt/index.html" class="work-tile encrypt-tile">
             <h2 class="tile-title">Encrypt data</h2>
             <div class="tile-holder">
-                <img class="tile-img" loading="lazy" src="https://d26icxokvtdw5w.cloudfront.net/images/encrypt-2.png" />
+                <img class="tile-img" loading="lazy" src="https://d26icxokvtdw5w.cloudfront.net/images/encrypt-2.png" alt="Encryption tool preview" />
             </div>
         </a>
 
@@ -111,8 +84,21 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <!-- Navbar Config & Script -->
+    <script>window.navbarConfig = { basePath: "", currentPage: null };</script>
+    <script defer src="common/navbar.js"></script>
+
     <!-- My Scripts -->
     <script defer src="common/index.js" charset="utf-8"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function() {});
+            });
+        }
+    </script>
 
 </body>
 </html>
